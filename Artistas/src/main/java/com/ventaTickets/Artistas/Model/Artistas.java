@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,21 +16,19 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArtistasModel {
+public class Artistas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column (unique = true, length = 20, nullable = false)
     private String nombre;
 
-    @Column (length = 20, nullable = false)
-    private String apellido;
+    @NotBlank
+    @Column (unique = false, length = 20, nullable = false)
+    private String generoMusical;
 
-    @Column (length = 20, nullable = false)
-    private String nacionalidad;
-
-    @Column (length = 20, nullable = false)
-    private String funciones;
+    @Column (length = 200, nullable = false)
+    private String biografia;
 }
 
