@@ -1,0 +1,8 @@
+CREATE TABLE artistas (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(20) NOT NULL UNIQUE,
+    apellido VARCHAR(20) NOT NULL UNIQUE,
+    nacionalidad VARCHAR(20) NOT NULL UNIQUE,
+    funciones VARCHAR(20) NOT NULL UNIQUE
+    
+);
